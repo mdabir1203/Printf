@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:35:55 by mabbas            #+#    #+#             */
-/*   Updated: 2022/06/22 16:36:14 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/06/23 14:23:07 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,4 @@ int		ft_printf_hexa(char x_chr, unsigned int x);
 
 // ...  Main Function ... // 
 int		ft_printf(const char *s, ...);
+
