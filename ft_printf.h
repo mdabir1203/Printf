@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:35:55 by mabbas            #+#    #+#             */
-/*   Updated: 2022/06/23 14:23:07 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/06/23 22:30:53 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 //....... Helper Functions ..... //
 
 size_t	ft_strlen(const char *s);
-int		ft_printf_nbr_base(size_t n, size_t base, int c);
+int		ft_printf_base_conv(long long unsigned int num, size_t base, int in_num);
 
 //...... Format Specifier Functions .... // 
 
@@ -32,4 +32,3 @@ int		ft_printf_hexa(char x_chr, unsigned int x);
 
 // ...  Main Function ... // 
 int		ft_printf(const char *s, ...);
-
