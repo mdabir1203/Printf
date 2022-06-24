@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 15:31:28 by mabbas            #+#    #+#             */
-/*   Updated: 2022/06/23 23:01:46 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/06/24 04:05:49 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ int	ft_printf_int2decimal(int dec)
 		input += write(1, "-", 1);
 		dec *= -1;
 	}
-	input += ft_printf_nbr_base(dec, 10, 0);
+	input += ft_printf_base_conv(dec, 10, 0);
 	return (input);
 }

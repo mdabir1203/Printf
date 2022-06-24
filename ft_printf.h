@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:35:55 by mabbas            #+#    #+#             */
-/*   Updated: 2022/06/23 22:30:53 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/06/24 04:07:42 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@
 # include <stddef.h>
 # include <unistd.h>
 
+typedef long long unsigned int	t_lluint;
 //....... Helper Functions ..... //
-
 size_t	ft_strlen(const char *s);
-int		ft_printf_base_conv(long long unsigned int num, size_t base, int in_num);
+int		ft_printf_base_conv(t_lluint n, size_t base, int in_num);
 
 //...... Format Specifier Functions .... // 
-
 int		ft_printf_char(char c);
-size_t	ft_printf_string(char *s);
-int		ft_printf_pointer(void *p);
-int		ft_printf_digits(int d);
-int		ft_printf_unint(unsigned int d);
-int		ft_printf_hexa(char x_chr, unsigned int x);
+size_t	ft_printf_string(char *str);
+int		ft_printf_pointadd(void *ptr);
+int		ft_printf_int2decimal(int dec);
+int		ft_printf_unint(unsigned int u_dec);
+int		ft_printf_hexa(char char_x, unsigned int x);
 
 // ...  Main Function ... // 
 int		ft_printf(const char *s, ...);
+#endif

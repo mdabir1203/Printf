@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 15:59:24 by mabbas            #+#    #+#             */
-/*   Updated: 2022/06/23 23:09:25 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/06/24 04:03:02 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 
 int	ft_printf_pointadd(void *ptr)
 {
-	int						input;
-	unsigned long long int	ptr;
+	int			input;
+	t_lluint	p;
 
 	input = 0;
-	ptr = (unsigned long long int) p;
+	p = (t_lluint) ptr;
 	input += write(1, "0x", 2);
-	input += ft_printf_base_conv(ptr, 16, 0);
+	input += ft_printf_base_conv(p, 16, 0);
 	return (input);
 }

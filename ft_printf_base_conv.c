@@ -21,7 +21,7 @@
  */
 #include    "ft_printf.h"
 
-int	ft_printf_base_conv(long long unsigned int n, size_t base, int in_num)
+int	ft_printf_base_conv(t_lluint n, size_t base, int in_num)
 {
 	char	*ptr;
 	int		input;

@@ -6,7 +6,7 @@
 #    By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/23 14:23:53 by mabbas            #+#    #+#              #
-#    Updated: 2022/06/23 15:11:51 by mabbas           ###   ########.fr        #
+#    Updated: 2022/06/24 03:46:42 by mabbas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,25 +20,27 @@ ifeq ($(DEBUG),1)
 else
 	CFLAGS	= -Wall -Wextra -Werror
 endif
-	
+
 #Source Functions for the library
-source		=  $(shell find . -name *.c)
+source		=  $(shell find . -type f -name "*.c")
 
 # The object files after compiling
 objects = $(source:%.c=%.o)
 
-$(NAME):$(objects)
+$(NAME):
 	@echo "$$HEADER"
-	$(CC) $(CFLAGS) -c $(source)
+	$(CC) $(CFLAGS) -c $(source) 
 	ar rcs $(NAME) $(objects)
 
-all:$(NAME)
+all: $(NAME)
 
+norm:
+	norminette ./libft/
+	@echo
 # Remove all object files
 clean:
 	@echo "$$HEADER2"
 	rm -rf $(objects)
-	rm -rf *.o
 
 # Remove object and also the library
 fclean: clean
