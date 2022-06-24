@@ -6,7 +6,7 @@
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 19:48:07 by mabbas            #+#    #+#             */
-/*   Updated: 2022/06/24 04:05:07 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/06/24 16:30:34 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_printf_hexa(char char_x, unsigned int x)
 	input = 0;
 	if (char_x == 'x')
 	{
-		input += ft_printf_base_conv(x, 16, 1);
+		input += ft_printf_base_conv(x, 16, 0);
 	}
 	else if (char_x == 'X')
 	{

@@ -1,15 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_main.c                                   :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 00:05:10 by mabbas            #+#    #+#             */
-/*   Updated: 2022/06/24 04:07:35 by mabbas           ###   ########.fr       */
+/*   Updated: 2022/06/24 17:00:38 by mabbas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @file ft_printf.c
+ * @brief This is the main funciton of print where it uses the variadic func
+ * 		  .How it works is it takes lot of arguments (...) -->> this is how
+ * 		   it operates.I used various cases for different format specifier
+ * 		   to check for the flags being used. Then also in the variadic
+ * 		   function I need the arguments and data type. I used pointer 
+ * 		   *(*(s + 1)) --> to check the next flag letter after %
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include "ft_printf.h"
 
 static int	ft_printf_format_cases(const char **str, va_list args)
@@ -34,7 +46,7 @@ static int	ft_printf_format_cases(const char **str, va_list args)
 	return (print_out);
 }
 
-int	printf(const char *s, ...)
+int	ft_printf(const char *s, ...)
 {
 	int		print_out;
 	va_list	args;
@@ -51,8 +63,10 @@ int	printf(const char *s, ...)
 			s++;
 		}
 		else
-			write(1, s, sizeof(s));
+		{
+			write(1, s, 1);
 			print_out++;
+		}
 		s++;
 	}
 	va_end(args);

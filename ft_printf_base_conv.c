@@ -21,7 +21,7 @@
  */
 #include    "ft_printf.h"
 
-int	ft_printf_base_conv(t_lluint n, size_t base, int in_num)
+int	ft_printf_base_conv(t_lluint n, size_t base, int flag)
 {
 	char	*ptr;
 	int		input;
@@ -30,13 +30,13 @@ int	ft_printf_base_conv(t_lluint n, size_t base, int in_num)
 	input = 0;
 	ptr = "0123456789abcdef";
 	if (n >= base)
-		input += ft_printf_base_conv(n / base, base, in_num);
+		input += ft_printf_base_conv(n / base, base, flag);
 	char_num = ptr[n % base];
-	if (in_num == 0 && (char_num >= 'a' && char_num <= 'f'))
+	if (flag == 0 && (char_num >= 'a' && char_num <= 'f'))
 		input += write(1, &char_num, sizeof(char));
-	else if (in_num && (char_num >= 'A' && char_num <= 'F'))
+	else if (flag && (char_num >= 'a' && char_num <= 'f'))
 	{
-		char_num += 32;
+		char_num -= 32;
 		input += write(1, &char_num, sizeof(char));
 	}
 	else

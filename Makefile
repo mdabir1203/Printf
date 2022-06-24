@@ -6,7 +6,7 @@
 #    By: mabbas <mabbas@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/23 14:23:53 by mabbas            #+#    #+#              #
-#    Updated: 2022/06/24 03:46:42 by mabbas           ###   ########.fr        #
+#    Updated: 2022/06/24 17:05:23 by mabbas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,22 +21,27 @@ else
 	CFLAGS	= -Wall -Wextra -Werror
 endif
 
+
 #Source Functions for the library
-source		=  $(shell find . -type f -name "*.c")
+source		= ft_printf_base_conv.c ft_printf_char.c \
+			  ft_printf_hexa.c ft_printf_unint.c \
+			  ft_printf_int2decimal.c ft_printf_pointadd.c \
+			  ft_printf_string.c ft_strlen.c \
+			  ft_printf.c
+#$(shell find . -type f -name "ft_print*.c")
+#$(shell find . -type f -name "*.c")
 
 # The object files after compiling
 objects = $(source:%.c=%.o)
+	 
 
-$(NAME):
+$(NAME): $(objects)
 	@echo "$$HEADER"
-	$(CC) $(CFLAGS) -c $(source) 
 	ar rcs $(NAME) $(objects)
-
+	
+		
 all: $(NAME)
 
-norm:
-	norminette ./libft/
-	@echo
 # Remove all object files
 clean:
 	@echo "$$HEADER2"
@@ -46,10 +51,10 @@ clean:
 fclean: clean
 	@echo "$$HEADER3"
 	rm -rf $(NAME)
-
+	
 re: fclean all	
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re 
 
 
 
